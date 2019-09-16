@@ -22,7 +22,6 @@ class User(db.Model):
 @app.route('/users/')
 def users_api():
     users = User.query.all()
-    # print(jsonify(users))
     return jsonify([{u.id: u.name} for u in users])
 
 
